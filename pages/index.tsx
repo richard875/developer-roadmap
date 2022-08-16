@@ -41,7 +41,8 @@ export default function Home(props: HomeProps) {
               fontSize={['22px', '22px', '28px']}
               mb={['8px', '8px', '15px']}
             >
-              Hey there! 👋 University of Sydney School of Computer Science
+              Hey there! 👋
+              <br /> University of Sydney School of Computer Science
             </Heading>
             <Text fontSize={['14px', '14px', '16px']} mb="10px">
               <Text fontWeight={500} as="span">
