@@ -1,4 +1,11 @@
-import { Box, Container, Heading, SimpleGrid, Tag, Text } from '@chakra-ui/react';
+import {
+  Box,
+  Container,
+  Heading,
+  SimpleGrid,
+  Tag,
+  Text,
+} from '@chakra-ui/react';
 import { GlobalHeader } from '../components/global-header';
 import { Footer } from '../components/footer';
 import { OpensourceBanner } from '../components/opensource-banner';
@@ -34,7 +41,7 @@ export default function Home(props: HomeProps) {
               fontSize={['22px', '22px', '28px']}
               mb={['8px', '8px', '15px']}
             >
-              Hey there! 👋
+              Hey there! 👋 University of Sydney School of Computer Science
             </Heading>
             <Text fontSize={['14px', '14px', '16px']} mb="10px">
               <Text fontWeight={500} as="span">
@@ -46,35 +53,51 @@ export default function Home(props: HomeProps) {
             </Text>
           </Box>
 
-          <Tag bg='gray.400' mb={4}>Role Based Roadmaps</Tag>
-          <SimpleGrid columns={[1, 2, 3]} spacing={['10px', '10px', '15px']} mb='40px'>
-            {roadmaps.filter(roadmap => roadmap.type === 'role').map((roadmap: RoadmapType, counter: number) => (
-              <HomeRoadmapItem
-                isUpcoming={roadmap.isUpcoming}
-                url={`/${roadmap.id}`}
-                key={roadmap.id}
-                colorIndex={counter}
-                title={roadmap.featuredTitle}
-                isCommunity={roadmap.isCommunity}
-                subtitle={roadmap.featuredDescription}
-              />
-            ))}
+          <Tag bg="gray.400" mb={4}>
+            Role Based Roadmaps
+          </Tag>
+          <SimpleGrid
+            columns={[1, 2, 3]}
+            spacing={['10px', '10px', '15px']}
+            mb="40px"
+          >
+            {roadmaps
+              .filter((roadmap) => roadmap.type === 'role')
+              .map((roadmap: RoadmapType, counter: number) => (
+                <HomeRoadmapItem
+                  isUpcoming={roadmap.isUpcoming}
+                  url={`/${roadmap.id}`}
+                  key={roadmap.id}
+                  colorIndex={counter}
+                  title={roadmap.featuredTitle}
+                  isCommunity={roadmap.isCommunity}
+                  subtitle={roadmap.featuredDescription}
+                />
+              ))}
           </SimpleGrid>
 
-          <Tag bg='gray.400' mb={4}>Tool Based Skill Trees</Tag>
+          <Tag bg="gray.400" mb={4}>
+            Tool Based Skill Trees
+          </Tag>
 
-          <SimpleGrid columns={[1, 2, 3]} spacing={['10px', '10px', '15px']} mb='30px'>
-            {roadmaps.filter(roadmap => roadmap.type === 'tool').map((roadmap: RoadmapType, counter: number) => (
-              <HomeRoadmapItem
-                isUpcoming={roadmap.isUpcoming}
-                url={`/${roadmap.id}`}
-                key={roadmap.id}
-                colorIndex={counter}
-                title={roadmap.featuredTitle}
-                isCommunity={roadmap.isCommunity}
-                subtitle={roadmap.featuredDescription}
-              />
-            ))}
+          <SimpleGrid
+            columns={[1, 2, 3]}
+            spacing={['10px', '10px', '15px']}
+            mb="30px"
+          >
+            {roadmaps
+              .filter((roadmap) => roadmap.type === 'tool')
+              .map((roadmap: RoadmapType, counter: number) => (
+                <HomeRoadmapItem
+                  isUpcoming={roadmap.isUpcoming}
+                  url={`/${roadmap.id}`}
+                  key={roadmap.id}
+                  colorIndex={counter}
+                  title={roadmap.featuredTitle}
+                  isCommunity={roadmap.isCommunity}
+                  subtitle={roadmap.featuredDescription}
+                />
+              ))}
           </SimpleGrid>
         </Container>
       </Box>
